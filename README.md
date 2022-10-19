@@ -3,4 +3,4 @@
 
 Features:
 
-The inputs being taken are the grades for labs, assignments, term project, review project and the final exam from a text file.   
+The inputs being taken are the grades for labs, assignments,and the final for each course during a student's semester.
