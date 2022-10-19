@@ -1,5 +1,7 @@
 # Review-Project- by Brandon Charette, Kaidan Campbell, Andrew Dionizio and Kyle DaSilva 
 
+Summary & Github Repo:
+
 Planning:
 
 Features:
