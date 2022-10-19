@@ -10,4 +10,7 @@ The inputs being taken are the grades for labs, assignments,and the final for ea
 
 Compile Instructions:
 
+In order to compile the code you will need g++ and the name of the input file which contains the grades
+       Ex. g++ name.txt -o finalgrade
+
 Walkthrough:
