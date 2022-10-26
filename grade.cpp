@@ -9,8 +9,6 @@ class Grade{
     private:
         double grade;
 
-
-
     public:
         Grade(double grade);
         std::vector<std::string> sections_arr;
@@ -18,20 +16,46 @@ class Grade{
         std::vector<double> section_grades_arr;
         void Av_Grade_of_Sections(double &sum);
         void get_grade_and_weight(std::string &course);
-        void print();
+        void clear_all();
 };
 
 int main(){
-    double grade = 0;
-    bool flag = true;
 
-    std::string course;
-    std::cout << "Please enter a course: ";
-    std::cin >> course;
-    Grade Course(grade);
-    Course.get_grade_and_weight(course);
-    Course.Av_Grade_of_Sections(grade);
-    std::cout << grade << std::endl;
+
+    int i = 1;
+    while ( i > 0){
+        double grade = 0;
+        std::string course;
+        std::cout << "Please enter a course: ";
+        std::cin >> course;
+        Grade Course(grade);
+        Course.get_grade_and_weight(course);
+        Course.Av_Grade_of_Sections(grade);
+        std::cout << "Your grade is: ";
+        std::cout << grade << std::endl;
+        std::string flag;
+        int j = 1;
+        while (j > 0){
+
+            std::cout << "Do you wish to enter another class (Y/N) ";
+            std::cin >> flag;
+            if (flag == "N" or flag == "n" or flag == "Y" or flag == "y"){
+                break;
+            }
+            j = j + 1;
+        }
+
+
+        if(flag == "N" or flag == "n"){
+            break;
+        }
+
+        if(flag == "Y" or flag == "y"){
+            Course.clear_all();
+            i = i + 1;
+        }
+
+    }
 
     return 0;
 }
@@ -89,6 +113,12 @@ void Grade::Av_Grade_of_Sections(double &sum){
         temp = 0;
     }
 
-    
 
+
+}
+
+void Grade::clear_all(){
+    sections_arr.clear();
+    section_grades_arr.clear();
+    weight_arr.clear();
 }
