@@ -2,7 +2,8 @@
 #include <cmath>
 #include <cstring>
 #include <vector>
-#include <string>
+#include <string> // for strings data types
+#include <iomanip> // to use std::setprecision
 
 class Grade{
 
@@ -21,20 +22,19 @@ class Grade{
 
 int main(){
 
-
     int i = 1;
-    while ( i > 0){
+    while ( i > 0){ // this while loop allows for the user to calc the grade for n courses
         double grade = 0;
         std::string course;
-        std::cout << "Please enter a course: ";
+        std::cout << "Please enter a course: "; // asks to enter a course
         std::cin >> course;
-        Grade Course(grade);
-        Course.get_grade_and_weight(course);
+        Grade Course(grade);                    // line 31 - 33 creates a course object and gets the grades/weight
+        Course.get_grade_and_weight(course);    // of the course and then generates the course weighted grade.
         Course.Av_Grade_of_Sections(grade);
         std::cout << "Your grade is: ";
-        std::cout << grade << std::endl;
+        std::cout << std::setprecision(10) << grade << std::endl;
         std::string flag;
-        int j = 1;
+        int j = 1;                              // asks if user wants to see the grade for another course or kill program
         while (j > 0){
 
             std::cout << "Do you wish to enter another class (Y/N) ";
@@ -44,7 +44,6 @@ int main(){
             }
             j = j + 1;
         }
-
 
         if(flag == "N" or flag == "n"){
             break;
@@ -59,14 +58,15 @@ int main(){
 
     return 0;
 }
-Grade::Grade(double grade){
+Grade::Grade(double grade){  //constructor
     this-> grade = grade;
 }
 
 void Grade::get_grade_and_weight(std::string &course){
     int i = 1;
 
-    while( i > 0){
+    while( i > 0){              //loops through n times to get the grades and weight of each course section
+                                //until killed by the user
         double weight = 0;
         double sgrade = 0;
         std::string section;
@@ -94,31 +94,28 @@ void Grade::get_grade_and_weight(std::string &course){
 
         weight_arr.push_back(weight);
         section.clear();
-
-
         i = i + 1;
 
     }
-
-
 }
 
 void Grade::Av_Grade_of_Sections(double &sum){
 
+    //computes the grade mathematically with lines 109 and 110
+
     sum = 0;
     for(int i = 0; i < sections_arr.size(); i ++){
-        int temp = 0;
+        double temp = 0;
         temp =  ((section_grades_arr[i]) * (weight_arr[i]/ 100));
         sum = sum + temp;
         temp = 0;
     }
-
-
-
 }
 
 void Grade::clear_all(){
+    //clears all contents of the object to allow it to be reused
     sections_arr.clear();
     section_grades_arr.clear();
     weight_arr.clear();
 }
+
