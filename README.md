@@ -41,6 +41,8 @@ The inputs being taken are the grades for labs, assignments,and the final for ea
 Compile Instructions:
 
 In order to compile the code you will need to use g++, then after running you will be asked to input the certain course, grades and the weight of the grades.
+
+
        Ex. g++ grade.cpp -o grades
            ./grades
            "Please enter a course: "
