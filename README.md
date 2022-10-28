@@ -1,6 +1,6 @@
 # Review-Project- by Brandon Charette, Kaidan Campbell, Andrew Dionizio and Kyle DaSilva 
 
-Summary & Github Repo:
+Github Repo: https://github.com/bcharette0504/Review-Project-.git
 
 Planning:
 
